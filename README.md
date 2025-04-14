@@ -1,7 +1,3 @@
-# MCP Weather Data Fetcher
-
-## Project Structure
-
 - `stdio/`: Weather data fetcher using STDIO transport
 - `sse/`: Weather data fetcher using Server-Sent Events (SSE) transport
 
