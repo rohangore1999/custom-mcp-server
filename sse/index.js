@@ -46,15 +46,15 @@ server.tool(
 
 let transport = null;
 
-app.get("/sse", (req, res) => {
+app.get("/sse", async (req, res) => {
   transport = new SSEServerTransport("/messages", res);
-  server.connect(transport);
+  await server.connect(transport);
 });
 
-app.post("/messages", (req, res) => {
+app.post("/messages", async (req, res) => {
   if (transport) {
-    transport.handlePostMessage(req, res);
+    await transport.handlePostMessage(req, res);
   }
 });
 
-app.listen(3000);
+app.listen(3002);
